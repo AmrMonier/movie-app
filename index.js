@@ -1,12 +1,17 @@
 import express from "express"
 import dotenv from "dotenv"
-import authenticationRoutes from './Routes/AuthenticationRoutes.js'
 
 dotenv.config()
 
+import authenticationRoutes from './Routes/AuthenticationRoutes.js'
+import movieRoutes from './Routes/MoviesRoutes.js'
+
 const app = express()
-const port = 5050
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+const port = process.env.PORT || 8080
 app.use('/api/auth', authenticationRoutes)
+app.use('/api/movie', movieRoutes)
 
 app.use(express.json())
 app.listen(port, () => {
