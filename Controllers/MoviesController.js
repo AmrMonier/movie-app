@@ -28,7 +28,7 @@ class MoviesController {
   }
   async mostRecent(req, res) {
     axios
-      .get(`/latest?${apiKey}`)
+      .get(`/upcoming?${apiKey}`)
       .then((response) => {
         res.json({ data: response.data });
       })
