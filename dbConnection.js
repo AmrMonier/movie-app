@@ -13,7 +13,6 @@ class DbConnection {
 
   mongo() {
     this.mongoConnection = mongoose.connect(
-      // 'mongodb+srv://monier:JpnF4JmCnrS8L5Rh@movierapp.d2fsw.mongodb.net/movieAppDB?retryWrites=true&w=majority',
       'mongodb://localhost:27017/moviesApp',
       {
         useNewUrlParser: true,
